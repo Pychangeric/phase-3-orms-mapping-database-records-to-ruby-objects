@@ -34,6 +34,11 @@ class Song
       VALUES (?, ?)
     SQL
 
+
+      sql = <<-SQL
+        SELECT *
+        FROM songs
+      SQL
     # insert the song
     DB[:conn].execute(sql, self.name, self.album)
 
